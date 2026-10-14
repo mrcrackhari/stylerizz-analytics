@@ -1,0 +1,30 @@
+-- Stylerizz Analytics — Indexes
+USE stylerizz_analytics;
+
+CREATE INDEX idx_customer_profiles_user   ON customer_profiles(user_id);
+CREATE INDEX idx_customer_addresses_cust  ON customer_addresses(customer_id);
+CREATE INDEX idx_vendor_accounts_user     ON vendor_accounts(user_id);
+CREATE INDEX idx_products_vendor          ON products(vendor_id);
+CREATE INDEX idx_products_brand           ON products(brand_id);
+CREATE INDEX idx_products_listing_type    ON products(listing_type);
+CREATE INDEX idx_product_variants_product ON product_variants(product_id);
+CREATE INDEX idx_sessions_customer        ON browsing_sessions(customer_id);
+CREATE INDEX idx_sessions_started         ON browsing_sessions(started_at);
+CREATE INDEX idx_web_events_session       ON web_events(session_id);
+CREATE INDEX idx_web_events_at            ON web_events(event_at);
+CREATE INDEX idx_product_views_product    ON product_views(product_id);
+CREATE INDEX idx_product_views_viewed     ON product_views(viewed_at);
+CREATE INDEX idx_product_clicks_product   ON product_clicks(product_id);
+CREATE INDEX idx_carts_customer           ON carts(customer_id);
+CREATE INDEX idx_cart_items_cart          ON cart_items(cart_id);
+CREATE INDEX idx_orders_customer          ON orders(customer_id);
+CREATE INDEX idx_orders_ordered_at        ON orders(ordered_at);
+CREATE INDEX idx_orders_status            ON orders(order_status);
+CREATE INDEX idx_order_items_order        ON order_items(order_id);
+CREATE INDEX idx_order_items_vendor       ON order_items(vendor_id);
+CREATE INDEX idx_payment_attempts_order   ON payment_attempts(order_id);
+CREATE INDEX idx_payments_order           ON payments(order_id);
+CREATE INDEX idx_refunds_order            ON refunds(order_id);
+CREATE INDEX idx_appointments_customer    ON designer_appointments(customer_id);
+CREATE INDEX idx_appointments_scheduled   ON designer_appointments(scheduled_at);
+CREATE INDEX idx_import_errors_batch      ON import_errors(batch_id);
